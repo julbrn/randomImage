@@ -1,0 +1,46 @@
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts.css);
+
+.page {
+  font-family: 'Poppins', Arial, sans-serif;
+  min-width: 320px;
+  max-width: 1440px;
+  box-sizing: border-box;
+  margin: 45px auto 60px;
+  font-size: 40px;
+  font-weight: 400;
+  background-color: #004643;
+  color: #fffffe;
+}
+
+.content {
+  width: 90%;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+}
+
+.image {
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  height: 700px;
+  position: relative;
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 15px;
+}
+
+
+.image__caption {
+  max-width: 70%;
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  font-size: 24px;
+  color: #f9bc60;
+  background-color: rgba(0,70,67,.6);
+}
+
+
