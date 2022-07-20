@@ -11,38 +11,28 @@
   <header class="header">
   </header>
   <main class="content">
-    <button></button>
+    <button type="submit" class="button button_type_randomizer">Get a random bird&nbsp;
+      photo!</button>
     <div class="image">
       <p class="image__caption"></p>
     </div>
+    <section class="extraInfo">
+    <div class="image__info-block">
+      <h2 class = "image__info-item image__info-title">Author:</h2>
+      <p class = "image__info-item image__info-details" id="author"></p>
+      <h2 class = "image__info-item image__info-title">Location:</h2>
+      <p class = "image__info-item image__info-details" id="location"></p>
+      <h2 class = "image__info-item image__info-title">Views:</h2>
+      <p class = "image__info-item image__info-details" id="views"></p>
+    </div>
+    <a class="downloadLink" href="" target="_blank">
+      <div class="button button_type_downloader"> Download this photo </div></a>
+      </section>
   </main>
   <footer class="footer">
 
   </footer>
-<script>
-  let header = document.querySelector('.image');
-  let randomCaption = document.querySelector('.image__caption');
-  let clientID = 'W5HbyIan__nswXh8qdM8bYd5_VWX9EjeKJsxbQ7vdE0';
-  let endpoint =
-    `https://api.unsplash.com/photos/random/?query=bird&orientation=landscape&client_id=${clientID}`;
-
-
-  function changePhoto() {
-    fetch(endpoint)
-      .then(function(response) {
-        return response.json()
-      })
-      .then(function(data){
-        header.style.backgroundImage =
-          'url(' + data.urls.regular +')';
-        randomCaption.textContent = data.description;
-      })
-      .catch(function(error) {
-        console.log(error)
-      })
-  }
-  header.addEventListener('click', changePhoto);
-
+<script src="index.js">
 </script>
 </body>
 </html>
