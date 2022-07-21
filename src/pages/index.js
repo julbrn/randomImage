@@ -1,4 +1,5 @@
 import './index.css';
+import {endpoint} from "../components/Api.js";
 import {
   imageContainer,
   button,
@@ -9,9 +10,9 @@ import {
   views,
   downloadLink,
   buttonText,
-  endpoint
 } from "../components/utils.js";
 
+/**Изменение текста и цвета текста кнопки при ожидании ответа с сервера*/
 const renderLoading = (isLoading, loadingText='Please wait...') => {
   if (isLoading) {
     button.textContent = loadingText;
@@ -36,6 +37,7 @@ function changePhoto() {
         ' to share';
       views.textContent = Number(data.views).toLocaleString();
       downloadLink.href = data.links.download;
+      /**Страница для скачивания фото открывается в новом окне*/
       downloadLink.setAttribute('target', '_blank');
     })
     .catch(function(error) {
@@ -43,4 +45,5 @@ function changePhoto() {
     })
     .finally(() => {renderLoading(false)})
 }
+
 randomizerButton.addEventListener('click', changePhoto);
