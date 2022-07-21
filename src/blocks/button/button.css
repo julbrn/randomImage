@@ -1,0 +1,29 @@
+.button {
+  display: inline-block;
+  position: relative;
+  width: 300px;
+  overflow: hidden;
+  height: 65px;
+  cursor: pointer;
+  border-radius: 15px;
+  background-color: #f9bc60;
+  color: #001e1d;
+  border: none;
+  font-size: 18px;
+  margin: 10px 0 30px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  transition: all .2s ease;
+}
+
+.button:active {
+  background-color: #af8444;
+}
+
+.button:hover {
+  text-indent: 35px;
+}
+
+.button:hover:before {
+  transform: scale(1,1);
+  text-indent: 0;
+}

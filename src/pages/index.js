@@ -1,15 +1,16 @@
-let imageContainer = document.querySelector('.image');
-let button = document.querySelector('.button');
-let randomizerButton = document.querySelector('.button_type_randomizer');
-let randomCaption = document.querySelector('.image__caption');
-let author = document.getElementById('author');
-let userLocation = document.getElementById('location');
-let views = document.getElementById('views')
-let downloadLink = document.querySelector('.downloadLink');
-let buttonText = button.textContent;
-let clientID = 'W5HbyIan__nswXh8qdM8bYd5_VWX9EjeKJsxbQ7vdE0';
-let endpoint =
-  `https://api.unsplash.com/photos/random/?query=bird&orientation=landscape&client_id=${clientID}`;
+import './index.css';
+import {
+  imageContainer,
+  button,
+  randomizerButton,
+  randomCaption,
+  author,
+  userLocation,
+  views,
+  downloadLink,
+  buttonText,
+  endpoint
+} from "../components/utils.js";
 
 const renderLoading = (isLoading, loadingText='Please wait...') => {
   if (isLoading) {
@@ -19,7 +20,6 @@ const renderLoading = (isLoading, loadingText='Please wait...') => {
     button.textContent = buttonText;
   }
 }
-
 
 function changePhoto() {
   renderLoading(true);
@@ -36,7 +36,7 @@ function changePhoto() {
         ' to share';
       views.textContent = Number(data.views).toLocaleString();
       downloadLink.href = data.links.download;
-      console.log(downloadLink.href)
+      downloadLink.setAttribute('target', '_blank');
     })
     .catch(function(error) {
       console.log(error)
