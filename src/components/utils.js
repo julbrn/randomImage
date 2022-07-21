@@ -7,4 +7,6 @@ export let userLocation = document.getElementById('location');
 export let views = document.getElementById('views')
 export let downloadLink = document.querySelector('.downloadLink');
 export let buttonText = button.textContent;
+export let form = document.querySelector('.form');
+export let formInput = form.querySelector('.form__input');
 

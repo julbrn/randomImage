@@ -1,16 +1,17 @@
 .button {
   display: inline-block;
   position: relative;
-  width: 300px;
+  width: 260px;
   overflow: hidden;
   height: 65px;
   cursor: pointer;
   border-radius: 15px;
   background-color: #f9bc60;
+  margin: 0;
+  padding: 0;
   color: #001e1d;
   border: none;
   font-size: 18px;
-  margin: 10px 0 30px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
   transition: all .2s ease;
 }

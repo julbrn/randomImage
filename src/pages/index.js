@@ -1,15 +1,16 @@
 import './index.css';
-import {endpoint} from "../components/Api.js";
+import {clientID} from "../components/Api.js";
 import {
   imageContainer,
   button,
-  randomizerButton,
   randomCaption,
   author,
   userLocation,
   views,
   downloadLink,
   buttonText,
+  form,
+  formInput,
 } from "../components/utils.js";
 
 /**Изменение текста и цвета текста кнопки при ожидании ответа с сервера*/
@@ -22,9 +23,9 @@ const renderLoading = (isLoading, loadingText='Please wait...') => {
   }
 }
 
-function changePhoto() {
+function changePhoto(preference) {
   renderLoading(true);
-  fetch(endpoint)
+  fetch(`https://api.unsplash.com/photos/random/?query=${preference}&orientation=landscape&color=yellow&client_id=${clientID}`)
     .then(function(response) {
       return response.json()
     })
@@ -46,4 +47,8 @@ function changePhoto() {
     .finally(() => {renderLoading(false)})
 }
 
-randomizerButton.addEventListener('click', changePhoto);
+form.addEventListener('submit', (evt) => {
+  evt.preventDefault();
+  const preference = formInput.value;
+  changePhoto(preference);
+});

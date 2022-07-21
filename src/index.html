@@ -3,15 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bird randomizer</title>
+  <title>Photo randomizer</title>
   <link rel="icon" type="image/x-icon" href="images/favicon.svg">
 </head>
 <body class="page">
   <header class="header">
   </header>
   <main class="content">
-    <button type="submit" class="button button_type_randomizer">Get a random bird&nbsp;
-      photo!</button>
+    <form class="form">
+    <input type="text" class="form__input" minlength="3" maxlength="17"
+           placeholder='Try "vombat" or "corgi"' required>
+     <ul class="form__colors-list">
+       <li class="form__color">
+         <input class="form__color-check" id="black" type="radio">
+       </li>
+       <li class="form__color">
+         <input class="form__color-check" id="white" type="radio">
+       </li>
+       <li class="form__color">
+         <input class="form__color-check" id="yellow" type="radio">
+       </li>
+       <li class="form__color">
+         <input class="form__color-check" id="green" type="radio">
+       </li>
+     </ul>
+      <button type="submit" class="button button_type_randomizer">Get a random
+        photo!</button>
+    </form>
     <div class="image">
       <p class="image__caption"></p>
     </div>
