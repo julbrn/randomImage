@@ -11,9 +11,9 @@
 .button_type_downloader:before {
   content: '\1F817';
   color: #004643;
-  font-size: 32px;
+  font-size: 35px;
   font-weight: 700;
-  padding-left: 0;
+  padding-left: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,9 +22,8 @@
   left: 0;
   height: 100%;
   width: 47px;
-  background-color: rgba(0,0,0,0.4);
-  border-radius: 0 50% 50% 0;
+  background-color: transparent;
   transform: scale(0,1);
   transform-origin: left center;
-  transition: all .3s linear 0s;
+  transition: all .3s ease-in-out 0s;
 }

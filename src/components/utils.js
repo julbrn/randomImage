@@ -1,12 +1,13 @@
-export let imageContainer = document.querySelector('.image');
-export let button = document.querySelector('.button');
-export let randomizerButton = document.querySelector('.button_type_randomizer');
-export let randomCaption = document.querySelector('.image__caption');
-export let author = document.getElementById('author');
-export let userLocation = document.getElementById('location');
-export let views = document.getElementById('views')
-export let downloadLink = document.querySelector('.downloadLink');
-export let buttonText = button.textContent;
-export let form = document.querySelector('.form');
-export let formInput = form.querySelector('.form__input');
+export const imageContainer = document.querySelector('.image');
+export const button = document.querySelector('.button');
+export const randomizerButton = document.querySelector('.button_type_randomizer');
+export const randomCaption = document.querySelector('.image__caption');
+export const author = document.getElementById('author');
+export const userInfo = document.getElementById('aboutUser');
+export const likes = document.getElementById('likes')
+export const downloadLink = document.querySelector('.downloadLink');
+export const buttonText = button.textContent;
+export const form = document.querySelector('.form');
+export const formInput = form.querySelector('.form__input');
+export const radioBoxes = document.getElementsByName('colorPicker');
 

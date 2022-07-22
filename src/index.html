@@ -11,24 +11,26 @@
   </header>
   <main class="content">
     <form class="form">
-    <input type="text" class="form__input" minlength="3" maxlength="17"
-           placeholder='Try "vombat" or "corgi"' required>
-     <ul class="form__colors-list">
-       <li class="form__color">
-         <input class="form__color-check" id="black" type="radio">
-       </li>
-       <li class="form__color">
-         <input class="form__color-check" id="white" type="radio">
-       </li>
-       <li class="form__color">
-         <input class="form__color-check" id="yellow" type="radio">
-       </li>
-       <li class="form__color">
-         <input class="form__color-check" id="green" type="radio">
-       </li>
-     </ul>
-      <button type="submit" class="button button_type_randomizer">Get a random
-        photo!</button>
+      <input type="text" class="form__input" minlength="3" maxlength="17"
+             placeholder='Try "cat" or "sunrise"' required>
+       <ul class="form__colors-list">
+         <li class="form__color">
+           <input name="colorPicker" class="form__color-check" id="black" value="black" type="radio">
+         </li>
+         <li class="form__color">
+           <input name="colorPicker" class="form__color-check" id="white"  value="white"
+                  type="radio">
+         </li>
+         <li class="form__color">
+           <input name="colorPicker" class="form__color-check" id="purple" value="purple"
+                  type="radio">
+         </li>
+         <li class="form__color">
+           <input name="colorPicker" class="form__color-check" id="green" value="green"
+                  type="radio">
+         </li>
+       </ul>
+        <button type="submit" class="button button_type_randomizer">Get a photo!</button>
     </form>
     <div class="image">
       <p class="image__caption"></p>
@@ -37,10 +39,10 @@
     <div class="extraInfo__block">
       <h2 class = "extraInfo__item extraInfo__title">Author:</h2>
       <p class = "extraInfo__item extraInfo__details" id="author"></p>
-      <h2 class = "extraInfo__item extraInfo__title">Location:</h2>
-      <p class = "extraInfo__item extraInfo__details" id="location"></p>
-      <h2 class = "extraInfo__item extraInfo__title">Views:</h2>
-      <p class = "extraInfo__item extraInfo__details" id="views"></p>
+      <h2 class = "extraInfo__item extraInfo__title">About the author:</h2>
+      <p class = "extraInfo__item extraInfo__details" id="aboutUser"></p>
+      <h2 class = "extraInfo__item extraInfo__title">Likes:</h2>
+      <p class = "extraInfo__item extraInfo__details" id="likes"></p>
     </div>
     <a class="downloadLink" href="">
       <div class="button button_type_downloader"> Download this photo </div></a>

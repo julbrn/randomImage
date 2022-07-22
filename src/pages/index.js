@@ -5,13 +5,17 @@ import {
   button,
   randomCaption,
   author,
-  userLocation,
-  views,
+  userInfo,
+  likes,
   downloadLink,
   buttonText,
   form,
   formInput,
+  radioBoxes
 } from "../components/utils.js";
+
+
+console.log(radioBoxes);
 
 /**Изменение текста и цвета текста кнопки при ожидании ответа с сервера*/
 const renderLoading = (isLoading, loadingText='Please wait...') => {
@@ -23,21 +27,30 @@ const renderLoading = (isLoading, loadingText='Please wait...') => {
   }
 }
 
-function changePhoto(preference) {
+function selectRandomNum(min, max) { // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+
+function changePhoto(preference, selectedColor) {
   renderLoading(true);
-  fetch(`https://api.unsplash.com/photos/random/?query=${preference}&orientation=landscape&color=yellow&client_id=${clientID}`)
+  const randomNum = selectRandomNum(1, 3)
+  fetch(`https://api.unsplash.com/search/photos?query=${preference}&color=${selectedColor}&orientation=landscape&client_id=${clientID}`)
     .then(function(response) {
       return response.json()
     })
     .then(function(data){
+      console.log(data);
       imageContainer.style.backgroundImage =
-        'url(' + data.urls.regular +')';
-      randomCaption.textContent = 'Info: ' + (data.description || data.alt_description);
-      author.textContent = data.user.name;
-      userLocation.textContent = data.location.title || data.location.country || 'Preferred not' +
-        ' to share';
-      views.textContent = Number(data.views).toLocaleString();
-      downloadLink.href = data.links.download;
+        'url(' + data.results[randomNum].urls.regular +')';
+      randomCaption.textContent = 'Info: ' + (data.results[randomNum].description || data.results[randomNum].alt_description || 'Too good to be described');
+      author.textContent = data.results[randomNum].user.name;
+      const userAbout = data.results[randomNum].user.bio == ('[object Object]' || 'null' || '') ? ('Preferred' +
+        ' not' +
+        ' to share') : data.results[randomNum].user.bio;
+      userInfo.textContent = userAbout;
+      likes.textContent = Number(data.results[randomNum].likes).toLocaleString();
+      downloadLink.href = data.results[randomNum].links.download;
       /**Страница для скачивания фото открывается в новом окне*/
       downloadLink.setAttribute('target', '_blank');
     })
@@ -50,5 +63,14 @@ function changePhoto(preference) {
 form.addEventListener('submit', (evt) => {
   evt.preventDefault();
   const preference = formInput.value;
-  changePhoto(preference);
+  let selectedColor;
+  for (const radioBox of radioBoxes) {
+    if (radioBox.checked) {
+      selectedColor = radioBox.value;
+      break;
+    }
+    selectedColor = 'white';
+  }
+  console.log(selectedColor)
+  changePhoto(preference, selectedColor);
 });
