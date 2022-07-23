@@ -3,7 +3,7 @@
   background-color: rgba(144, 180, 206, .2);
   min-height: 60px;
   margin: 0;
-  padding: 0 0 0 16px;
+  padding: 0 16px;
   border-radius: 15px;
   word-wrap: break-word;
   display: flex;
@@ -12,7 +12,7 @@
 
 @media screen and (max-width: 1102px) {
   .extraInfo__item  {
-    padding-left: 12px;
+    padding: 0 12px;
     min-width: 100px;
   }
 }

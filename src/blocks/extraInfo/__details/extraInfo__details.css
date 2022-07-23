@@ -1,4 +1,5 @@
 .extraInfo__details {
   font-size: 18px;
   text-overflow: ellipsis;
+  word-break: break-word;
 }
