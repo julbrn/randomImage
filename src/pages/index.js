@@ -20,7 +20,7 @@ import {
 const renderLoading = (isLoading, loadingText='Please wait...') => {
   if (isLoading) {
     button.textContent = loadingText;
-    button.animate([{color: '#e16162'}, {color: '#001e1d'}], 1000)
+    button.animate([{color: '#f9bc60'}, {color: '#fffffe'}], 1000)
   } else {
     button.textContent = buttonText;
   }

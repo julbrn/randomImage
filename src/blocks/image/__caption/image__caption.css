@@ -1,4 +1,5 @@
 .image__caption {
+  padding: 1px 4px;
   max-width: 70%;
   max-height: 60%;
   overflow: hidden;
@@ -9,13 +10,13 @@
   position: absolute;
   bottom: 15px;
   left: 15px;
-  font-size: 20px;
-  color: #f9bc60;
-  background-color: rgba(0,70,67,.6);
+  font-size: 18px;
+  color: #fffffe;
+  background-color: rgba(0, 0, 0, .4);
 }
 
 @media screen and (max-width: 1102px) {
   .image__caption {
-    font-size: 16px;
+    font-size: 14px;
   }
 }

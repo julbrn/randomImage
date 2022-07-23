@@ -9,8 +9,8 @@
   color: #001e1d;
   font-size: 18px;
   border-radius: 5px;
-  border: none;
-  padding: 0 0 0 73px;
+  border: 2px solid #5f6c7b;
+  padding: 0 0 0 50px;
 }
 
 @media screen and (max-width: 1180px) {

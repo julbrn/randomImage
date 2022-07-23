@@ -1,11 +1,11 @@
 .extraInfo__title {
-  font-size: 22px;
+  font-size: 19px;
   font-weight: 400;
   color: #f9bc60;
 }
 
 @media screen and (max-width: 1102px) {
   .extraInfo__title {
-    font-size: 18px;
+    font-size: 16px;
   }
 }

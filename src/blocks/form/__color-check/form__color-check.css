@@ -4,12 +4,14 @@
   appearance: none;
   border-radius: 50%;
   cursor: pointer;
-  border: 4px solid #004643;
+  border: 3px solid rgba(144, 180, 206, .4);
   position: relative;
 }
 
 .form__color-check:checked {
   border: 4px solid #f9bc60;
+  height: 34px;
+  width: 34px;
 }
 
 #black {
