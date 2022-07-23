@@ -1,0 +1,20 @@
+.form__input {
+  width: 50%;
+  height: 55px;
+  background-color: #fffffe;
+  background-repeat: no-repeat;
+  background-position: center;
+  /**background-image: url("../../icons8-search.svg");*/
+  background-size: 10px;
+  color: #001e1d;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  padding: 0 0 0 73px;
+}
+
+@media screen and (max-width: 1180px) {
+  .form__input{
+    width: 100%;
+  }
+}

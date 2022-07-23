@@ -1,0 +1,29 @@
+.form__color-check {
+  height: 30px;
+  width: 30px;
+  appearance: none;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 4px solid #004643;
+  position: relative;
+}
+
+.form__color-check:checked {
+  border: 4px solid #f9bc60;
+}
+
+#black {
+  background-color: #000;
+}
+
+#white {
+  background-color: #fff;
+}
+
+#purple {
+  background-color: #b950b4;
+}
+
+#green {
+  background-color: #258c23;
+}

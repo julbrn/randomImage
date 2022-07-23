@@ -11,11 +11,10 @@ import {
   buttonText,
   form,
   formInput,
+  downloaderButton,
+  extraInfo,
   radioBoxes
 } from "../components/utils.js";
-
-
-console.log(radioBoxes);
 
 /**Изменение текста и цвета текста кнопки при ожидании ответа с сервера*/
 const renderLoading = (isLoading, loadingText='Please wait...') => {
@@ -27,10 +26,13 @@ const renderLoading = (isLoading, loadingText='Please wait...') => {
   }
 }
 
-function selectRandomNum(min, max) { // min and max included
-  return Math.floor(Math.random() * (max - min + 1) + min)
-}
+function selectRandomNum(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min) }
 
+function showTable() {
+  downloaderButton.classList.add('visible');
+  extraInfo.classList.add('visible');
+}
 
 function changePhoto(preference, selectedColor) {
   renderLoading(true);
@@ -45,12 +47,11 @@ function changePhoto(preference, selectedColor) {
         'url(' + data.results[randomNum].urls.regular +')';
       randomCaption.textContent = 'Info: ' + (data.results[randomNum].description || data.results[randomNum].alt_description || 'Too good to be described');
       author.textContent = data.results[randomNum].user.name;
-      const userAbout = data.results[randomNum].user.bio == ('[object Object]' || 'null' || '') ? ('Preferred' +
-        ' not' +
-        ' to share') : data.results[randomNum].user.bio;
+      const userAbout = data.results[randomNum].user.bio == null ? (`Preferred not to share`) : data.results[randomNum].user.bio;
       userInfo.textContent = userAbout;
       likes.textContent = Number(data.results[randomNum].likes).toLocaleString();
       downloadLink.href = data.results[randomNum].links.download;
+      showTable();
       /**Страница для скачивания фото открывается в новом окне*/
       downloadLink.setAttribute('target', '_blank');
     })
@@ -71,6 +72,5 @@ form.addEventListener('submit', (evt) => {
     }
     selectedColor = 'white';
   }
-  console.log(selectedColor)
   changePhoto(preference, selectedColor);
 });

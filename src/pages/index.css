@@ -1,5 +1,5 @@
 @import url(../vendor/normalize.css);
-@import url(../vendor/fonts.css);
+@import url(../vendor/fonts/fonts.css);
 @import url(../blocks/page/page.css);
 @import url(../blocks/content/content.css);
 @import url(../blocks/image/image.css);
@@ -13,87 +13,11 @@
 @import url(../blocks/extraInfo/__item/extraInfo__item.css);
 @import url(../blocks/extraInfo/__title/extraInfo__title.css);
 @import url(../blocks/extraInfo/__details/extraInfo__details.css);
+@import url(../blocks/form/form.css);
+@import url(../blocks/form/__input/form__input.css);
+@import url(../blocks/form/__colors-list/form__colors-list.css);
+@import url(../blocks/form/__color/form__color.css);
+@import url(../blocks/form/__color-check/form__color-check.css);
+@import url(../blocks/visible/visible.css);
 
-.form__input {
-  width: 50%;
-  height: 55px;
-  background: #fffffe url("../images/icons8-search.svg") no-repeat 8px center;
-  background-size: contain;
-  color: #001e1d;
-  font-size: 18px;
-  border-radius: 5px;
-  border: none;
-  padding: 0 0 0 73px;
-}
-
-@media screen and (max-width: 1180px) {
-  .form__input{
-    width: 100%;
-  }
-}
-
-.form {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 75%;
-  margin-bottom: 25px;
-}
-
-@media screen and (max-width: 1180px) {
-  .form {
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
-
-.form__colors-list {
-  list-style: none;
-  margin: 0 15px 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-@media screen and (max-width: 1180px) {
-  .form__colors-list {
-    margin: 20px 0;
-  }
-}
-
-.form__color {
-  padding: 0;
-  margin: 10px;
-}
-
-.form__color-check {
-  height: 30px;
-  width: 30px;
-  appearance: none;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 4px solid #004643;
-  position: relative;
-}
-
-#black {
-  background-color: #000;
-}
-
-#white {
-  background-color: #fff;
-}
-
-#purple {
-  background-color: #b950b4;
-}
-
-#green {
-  background-color: #258c23;
-}
-
-.form__color-check:checked {
-  border: 4px solid #f9bc60;
-}
 
