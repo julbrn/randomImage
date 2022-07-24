@@ -14,7 +14,7 @@
 @import url(../blocks/extraInfo/__title/extraInfo__title.css);
 @import url(../blocks/extraInfo/__details/extraInfo__details.css);
 @import url(../blocks/form/form.css);
-@import url(__input/form__input.css);
+@import url(../blocks/form/__input/form__input.css);
 @import url(../blocks/form/__colors-list/form__colors-list.css);
 @import url(../blocks/form/__color/form__color.css);
 @import url(../blocks/form/__color-check/form__color-check.css);
