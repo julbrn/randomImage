@@ -4,7 +4,7 @@
   appearance: none;
   border-radius: 50%;
   cursor: pointer;
-  border: 3px solid rgba(144, 180, 206, .4);
+  border: 3px solid rgba(144, 180, 206, .9);
   position: relative;
 }
 
@@ -28,4 +28,8 @@
 
 #green {
   background-color: #258c23;
+}
+
+#noColor {
+  background: linear-gradient(45deg, red, yellow, blue, red);
 }

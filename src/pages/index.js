@@ -37,7 +37,7 @@ function showTable() {
 function changePhoto(preference, selectedColor) {
   renderLoading(true);
   const randomNum = selectRandomNum(1, 3)
-  fetch(`https://api.unsplash.com/search/photos?query=${preference}&color=${selectedColor}&orientation=landscape&client_id=${clientID}`)
+  fetch(`https://api.unsplash.com/search/photos?query=${preference}${selectedColor}&orientation=landscape&client_id=${clientID}`)
     .then(function(response) {
       return response.json()
     })
@@ -56,7 +56,8 @@ function changePhoto(preference, selectedColor) {
       downloadLink.setAttribute('target', '_blank');
     })
     .catch(function(error) {
-      console.log(error)
+      console.log(error);
+      alert('Oopsie-doopsie, something went wrong! :( Please try selecting another query.')
     })
     .finally(() => {renderLoading(false)})
 }
@@ -66,11 +67,11 @@ form.addEventListener('submit', (evt) => {
   const preference = formInput.value;
   let selectedColor;
   for (const radioBox of radioBoxes) {
-    if (radioBox.checked) {
-      selectedColor = radioBox.value;
+    if (radioBox.checked && (radioBox.value !== 'noColor')) {
+      selectedColor = `&color=${radioBox.value}`;
       break;
     }
-    selectedColor = 'white';
+    selectedColor = '';
   }
   changePhoto(preference, selectedColor);
 });
