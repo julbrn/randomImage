@@ -3,11 +3,11 @@
 
 
 <img src="./src/images/screenshot2.png" alt="Пример страницы с данными, полученными с сервера"/>
-
+<img src="./src/images/gif.gif" alt="Пример поиска"/>
 
 ### Brief description
 
----
+--
 
 - responsive markup (desktop + mobile);
 - photo can be fetched from Unsplash by clicking the upper button (Unsplash API);
